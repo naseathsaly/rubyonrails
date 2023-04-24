@@ -1,24 +1,23 @@
-# README
+# rubyonrails using docker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# To launch project locally
 
-Things you may want to cover:
+## Clone project
+```
+git clone git@github.com:naseathsaly/rubyonrails.git .
+```
+## Copy sample database
+```
+cd rubyonrails
+cp sample-database-dot-yml config/database.yml
+```
 
-* Ruby version
+## Up docker
+```
+docker-compose up
+```
 
-* System dependencies
+## Access site
+http://0.0.0.0:3000
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
