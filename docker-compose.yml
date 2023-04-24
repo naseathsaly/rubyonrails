@@ -1,0 +1,23 @@
+services:
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./tmp/db:/var/lib/mysql
+      - ./tmp/sql:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: scheduled_tweets_development
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+  web:
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - .:/scheduled_tweets
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
