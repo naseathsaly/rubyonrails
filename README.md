@@ -4,7 +4,7 @@
 
 ## Clone project
 ```
-git clone git@github.com:naseathsaly/rubyonrails.git .
+git clone git@github.com:naseathsaly/rubyonrails.git
 ```
 ## Copy sample database
 ```
